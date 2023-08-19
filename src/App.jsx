@@ -103,13 +103,14 @@ const App = () => {
   };
 
   return (
-    <div>
+      <div  className="mx-96">
       {step === 1 && (
         <div>
-          <h2>Step 1: Basic Information</h2>
+          <h2>Basic Information</h2>
           <label>
             Project Name:
             <input
+            className="mt-5 p-2 rounded-md mx-2"
               type="text"
               name="projectName"
               value={formData.projectName}
@@ -119,12 +120,12 @@ const App = () => {
                   projectName: e.target.value,
                 }))
               }
-            />
+            /> <br />
           </label>
-          {/* Add input fields for Project Description, Client, and Contractor */}
           <label>
             Project Description:
             <input
+            className="mt-5 p-2 rounded-md mx-2"
               type="text"
               name="projectDescription"
               value={formData.projectDescription}
@@ -134,16 +135,15 @@ const App = () => {
                   projectDescription: e.target.value,
                 }))
               }
-            />
+            /> <br />
           </label>
-          {/* ... (Add other input fields) */}
-          <input type="file" accept=".csv" onChange={handleFileUpload} />
-          {/* Add input fields for max_X, min_X, max_Y, min_Y, max_Z, min_Z */}
+         <span>Your Csv File</span> <input className="mt-5 p-2 rounded-md mx-2" type="file" accept=".csv" onChange={handleFileUpload} /> <br />
           <label>
   Max X:
   <input
     type="number"
     name="max_X"
+    className="mt-5 p-2 rounded-md mx-2"
     value={formData.max_X}
     onChange={(e) =>
       setFormData((prevData) => ({
@@ -151,13 +151,14 @@ const App = () => {
         max_X: e.target.value,
       }))
     }
-  />
+  /> <br />
 </label>
 <label>
   Min X:
   <input
     type="number"
     name="min_X"
+    className="mt-5 p-2 rounded-md mx-2"
     value={formData.min_X}
     onChange={(e) =>
       setFormData((prevData) => ({
@@ -165,12 +166,13 @@ const App = () => {
         min_X: e.target.value,
       }))
     }
-  />
+  /> <br />
 </label>
 <label>
   Max Y:
   <input
     type="number"
+    className="mt-5 p-2 rounded-md mx-2"
     name="max_Y"
     value={formData.max_Y}
     onChange={(e) =>
@@ -179,13 +181,14 @@ const App = () => {
         max_Y: e.target.value,
       }))
     }
-  />
+  /> <br />
 </label>
 <label>
   Min Y:
   <input
     type="number"
     name="min_Y"
+    className="mt-5 p-2 rounded-md mx-2"
     value={formData.min_Y}
     onChange={(e) =>
       setFormData((prevData) => ({
@@ -193,12 +196,12 @@ const App = () => {
         min_Y: e.target.value,
       }))
     }
-  />
+  /> <br />
 </label>
 <label>
   Max Z:
   <input
-    type="number"
+className="mt-5 p-2 rounded-md mx-2"    type="number"
     name="max_Z"
     value={formData.max_Z}
     onChange={(e) =>
@@ -207,11 +210,12 @@ const App = () => {
         max_Z: e.target.value,
       }))
     }
-  />
+  /> <br />
 </label>
 <label>
   Min Z:
   <input
+  className="mt-5 p-2 rounded-md mx-2"
     type="number"
     name="min_Z"
     value={formData.min_Z}
@@ -221,7 +225,7 @@ const App = () => {
         min_Z: e.target.value,
       }))
     }
-  />
+  /> <br />
 </label>
           {/* Add other input fields for min_X, max_Y, min_Y, max_Z, min_Z */}
           <button onClick={handleNextStep}>Next</button>
@@ -272,10 +276,11 @@ const App = () => {
               </table>
             </div>
           )}
-          <button onClick={handleDownloadPDF}>Download PDF</button>
+          <button className="mt-5 p-2 rounded-md mx-2" onClick={handleDownloadPDF}>Download PDF</button>
         </div>
       )}
     </div>
+    
   );
 };
 
